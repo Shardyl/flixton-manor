@@ -10,7 +10,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-define( 'FLIXTON_VERSION', '0.2.0' );
+define( 'FLIXTON_VERSION', '0.2.1' );
 
 /* ---------------------------------------------------------------------------
  * Theme setup
@@ -33,6 +33,7 @@ require get_stylesheet_directory() . '/inc/enqueue.php';
 require get_stylesheet_directory() . '/inc/cms-config.php';
 require get_stylesheet_directory() . '/inc/helpers.php';
 require get_stylesheet_directory() . '/inc/contact-form.php';
+require get_stylesheet_directory() . '/inc/redirects.php';
 
 /* ---------------------------------------------------------------------------
  * Graceful fallbacks if the Sensa CMS plugin is not active yet.

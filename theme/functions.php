@@ -10,7 +10,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-define( 'FLIXTON_VERSION', '0.2.1' );
+define( 'FLIXTON_VERSION', '0.2.2' );
 
 /* ---------------------------------------------------------------------------
  * Theme setup

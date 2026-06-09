@@ -107,7 +107,7 @@ get_header();
 </section>
 
 <!-- GALLERY -->
-<section class="band gallery" id="life">
+<section class="band fm-gallery" id="life">
   <div class="wrap">
     <div class="center">
       <p class="eyebrow"><?php flixton_text( 'home_gal_eyebrow', 'Daily Life' ); ?></p>

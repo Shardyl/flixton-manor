@@ -110,7 +110,7 @@ section.band{padding:84px 0}
 .why-card p{color:#bcd6d6;font-size:.92rem;margin:0}
 
 /* ---------- gallery ---------- */
-.gallery{background:var(--cream)}
+.fm-gallery{background:var(--cream)}
 .gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:180px;gap:14px}
 .gal-grid img{width:100%;height:100%;object-fit:cover;border-radius:14px;cursor:pointer;transition:.3s}
 .gal-grid img:hover{filter:brightness(1.05);transform:scale(1.01)}

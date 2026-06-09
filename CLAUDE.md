@@ -35,3 +35,6 @@ MAH Gold): Kadence parent + bespoke child theme, Rank Math, WP Mail SMTP, **Sens
 - Keep blog post slugs from the old site; tidy service URLs to `/our-care/...`.
 - No em/en dashes in visible body copy.
 - Repo holds only theme + mu-plugins — never WP core, wp-config, or uploads.
+
+## Strategy & marketing context
+The site's marketing / brand / content / SEO source of truth is the **Strategy Pack** in [`strategy/`](strategy/README.md). Read it before any content, SEO, AEO, or marketing work. Scaffolded 2026-06-09; fill the `NEEDS-INPUT` gaps via `strategy/_QUESTIONNAIRE.md`.

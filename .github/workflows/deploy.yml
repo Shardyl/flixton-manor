@@ -1,0 +1,65 @@
+name: Deploy Flixton Manor to WP Engine
+
+# Push to main → deploys the flixton-manor theme + mu-plugins to the WP Engine
+# install (flixtonmanor) via rsync over the SSH gateway, then flushes cache.
+# WordPress core, uploads/media and other mu-plugins are never touched.
+#
+# Required repo Secret (Settings → Secrets and variables → Actions):
+#   WPE_SSH_KEY_B64 — base64-encoded private deploy key (same value as the sensa / sky-vision repos).
+#   Its public key is on the WP Engine account SSH-keys store (gateway), account-wide.
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'theme/**'
+      - 'mu-plugins/**'
+  workflow_dispatch:
+
+concurrency:
+  group: wpe-deploy-flixtonmanor
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure SSH for WP Engine
+        env:
+          KEY_B64: ${{ secrets.WPE_SSH_KEY_B64 }}
+        run: |
+          set -euo pipefail
+          if [ -z "${KEY_B64:-}" ]; then
+            echo "::error::WPE_SSH_KEY_B64 is not set. Add it in Settings → Secrets and variables → Actions (same value as the sensa / sky-vision repos)."
+            exit 1
+          fi
+          mkdir -p ~/.ssh
+          echo "$KEY_B64" | base64 -d > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keygen -l -f ~/.ssh/id_ed25519 >/dev/null || { echo "::error::WPE_SSH_KEY_B64 did not decode to a valid private key"; exit 1; }
+
+      - name: Deploy theme + mu-plugins via rsync over the SSH gateway
+        run: |
+          set -euo pipefail
+          GW="flixtonmanor@flixtonmanor.ssh.wpengine.net"
+          ROOT="/sites/flixtonmanor"
+          SSH="ssh -i $HOME/.ssh/id_ed25519 -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new"
+          ssh-keyscan -t rsa,ed25519 flixtonmanor.ssh.wpengine.net >> ~/.ssh/known_hosts 2>/dev/null
+          # Theme — exact mirror (our theme dir only; safe with --delete)
+          rsync -az --delete --exclude '.DS_Store' -e "$SSH" theme/ "$GW:$ROOT/wp-content/themes/flixton-manor/"
+          # mu-plugins — ADDITIVE (no --delete) so WP Engine's own mu-plugins are never removed
+          if [ -d mu-plugins ] && [ -n "$(ls -A mu-plugins 2>/dev/null)" ]; then
+            rsync -az --exclude '.DS_Store' -e "$SSH" mu-plugins/ "$GW:$ROOT/wp-content/mu-plugins/"
+          fi
+          # Clear caches so changes show immediately
+          $SSH "$GW" "wp cache flush; wp page-cache flush" || true
+
+      - name: Verify live
+        run: |
+          set -e
+          sleep 10
+          code=$(curl -s -o /dev/null -w "%{http_code}" "https://flixtonmanor.wpenginepowered.com/?cb=ci${GITHUB_RUN_ID}" || true)
+          echo "https://flixtonmanor.wpenginepowered.com/ -> $code"

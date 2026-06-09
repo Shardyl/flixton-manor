@@ -1,0 +1,15 @@
+/*
+Theme Name: Flixton Manor
+Theme URI: https://flixtonmanor.com
+Description: Bespoke Kadence child theme for Flixton Manor Nursing & Residential Care Home, Urmston, Manchester. Warm, trustworthy healthcare design. Content editable via Sensa CMS.
+Author: Sensa Productions
+Author URI: https://sensa.digital
+Template: kadence
+Version: 0.1.0
+Requires at least: 6.0
+Tested up to: 6.7
+Requires PHP: 7.4
+Text Domain: flixton-manor
+*/
+
+/* All visual styles live in assets/css/main.css (enqueued in inc/enqueue.php). */

@@ -117,8 +117,70 @@ add_filter( 'sensa_cms_config', function () {
 						array( 'k' => 'home_cta_p', 'l' => 'CTA: text', 'ta' => 1, 'd' => 'Our doors are always open. Call us for an informal chat, or arrange a visit with our home manager who&rsquo;ll be delighted to show you around and answer all your questions.' ),
 					),
 				),
+
+				// Shared group for the inner pages (filtered per page by key-prefix).
+				'pages' => array(
+					'label'  => 'Inner pages',
+					'fields' => array(
+						// About (about_)
+						array( 'k' => 'about_eyebrow', 'l' => 'About: eyebrow', 'd' => 'About Flixton Manor' ),
+						array( 'k' => 'about_h1', 'l' => 'About: heading', 'd' => 'A home built on genuine care' ),
+						array( 'k' => 'about_intro', 'l' => 'About: intro', 'ta' => 1, 'd' => 'For over 25 years, Flixton Manor has cared for the people of Trafford and Greater Manchester with warmth, dignity and a true sense of family.' ),
+						array( 'k' => 'about_story_h2', 'l' => 'About: story heading', 'd' => 'Good care is simply about being caring.' ),
+						array( 'k' => 'about_story_p1', 'l' => 'About: story p1', 'ta' => 1, 'd' => 'Flixton Manor is a nursing and residential care home in the heart of Trafford, around three minutes from the Trafford Centre. We have been established for over 25 years and consider ourselves a unique and forward-thinking home in the Manchester area.' ),
+						array( 'k' => 'about_story_p2', 'l' => 'About: story p2', 'ta' => 1, 'd' => 'FM Care is an ethos we live by. We believe in a common-sense approach to care we can be proud of: we treat all our residents, their families and each other the way we would like to be treated.' ),
+						array( 'k' => 'about_story_p3', 'l' => 'About: story p3', 'ta' => 1, 'd' => 'Our doors are always open for visiting, so you can see our home with no pretences. If you would like to be shown around by the home manager, please call to make an appointment.' ),
+						array( 'k' => 'about_cta_h2', 'l' => 'About: CTA heading', 'd' => 'Come and see for yourself' ),
+						array( 'k' => 'about_cta_p', 'l' => 'About: CTA text', 'ta' => 1, 'd' => 'The best way to get a feel for Flixton Manor is to visit. Call us for an informal chat or to arrange a look around.' ),
+
+						// Our Care (care_)
+						array( 'k' => 'care_h1', 'l' => 'Care: heading', 'd' => 'Care shaped around the person' ),
+						array( 'k' => 'care_intro', 'l' => 'Care: intro', 'ta' => 1, 'd' => 'From around-the-clock nursing to gentle residential and dementia support, every aspect of life at Flixton Manor is built around the comfort, dignity and wellbeing of the people who live here.' ),
+						array( 'k' => 'care_nursing_p', 'l' => 'Care: Nursing text', 'ta' => 1, 'd' => 'We keep medical practice in the background so residents can focus on wellness. A highly experienced nursing team is on hand 24 hours a day, using computerised care planning and medication systems.' ),
+						array( 'k' => 'care_residential_p', 'l' => 'Care: Residential text', 'ta' => 1, 'd' => 'Comfortable, homely living for residents who value their independence, with warm support always close by whenever it is needed.' ),
+						array( 'k' => 'care_dementia_p', 'l' => 'Care: Dementia text', 'ta' => 1, 'd' => 'A calm, dementia-friendly environment built on patience, familiarity and the four pillars of comfort.' ),
+						array( 'k' => 'care_beds_p', 'l' => 'Care: Bedrooms text', 'ta' => 1, 'd' => 'We have 37 bedrooms in a range of sizes, some en-suite and some for couples. Residents personalise their rooms, and every room has free WiFi.' ),
+						array( 'k' => 'care_meals_p', 'l' => 'Care: Meals text', 'ta' => 1, 'd' => 'Fresh, home-cooked meals with a choice at every sitting, prepared by a cook who has been with us for over 20 years.' ),
+						array( 'k' => 'care_act_p', 'l' => 'Care: Activities text', 'ta' => 1, 'd' => 'Games, quizzes, music and visitors, led by Tina, our in-house activities co-ordinator.' ),
+						array( 'k' => 'care_facil_p', 'l' => 'Care: Facilities text', 'ta' => 1, 'd' => 'A luxury wet room, state-of-the-art toileting and the Aidcall nurse-call system, so residents rarely wait for assistance.' ),
+
+						// Our Team (team_)
+						array( 'k' => 'team_h1', 'l' => 'Team: heading', 'd' => 'The people who make it home' ),
+						array( 'k' => 'team_intro', 'l' => 'Team: intro', 'ta' => 1, 'd' => 'We believe our staff are the most important part of the home. In fact, they are the home.' ),
+						array( 'k' => 'team_body1', 'l' => 'Team: paragraph 1', 'ta' => 1, 'd' => 'We respect and value our staff and create a family-style working environment for the benefit of all our residents.' ),
+						array( 'k' => 'team_body2', 'l' => 'Team: paragraph 2', 'ta' => 1, 'd' => 'The majority of our staff have been with the home for over five years, and several, including the deputy manager, for more than 20 years.' ),
+						array( 'k' => 'team_body3', 'l' => 'Team: paragraph 3', 'ta' => 1, 'd' => 'We recruit only clever, caring and committed people, and keep a relaxed yet efficient environment so the home has a wonderful atmosphere.' ),
+						array( 'k' => 'team_t1_name', 'l' => 'Team 1: name', 'd' => 'Clare' ),
+						array( 'k' => 'team_t1_role', 'l' => 'Team 1: role', 'd' => 'Home Manager' ),
+						array( 'k' => 'team_t1_bio', 'l' => 'Team 1: bio', 'ta' => 1, 'd' => 'Dedicated, caring and driven, Clare strives to provide a high quality of standards throughout the home.' ),
+						array( 'k' => 'team_t2_name', 'l' => 'Team 2: name', 'd' => 'Sue' ),
+						array( 'k' => 'team_t2_role', 'l' => 'Team 2: role', 'd' => 'Deputy Manager' ),
+						array( 'k' => 'team_t2_bio', 'l' => 'Team 2: bio', 'ta' => 1, 'd' => 'A caring and dedicated deputy manager, Sue has been part of the Flixton Manor family for over 30 years.' ),
+						array( 'k' => 'team_t3_name', 'l' => 'Team 3: name', 'd' => 'Susan' ),
+						array( 'k' => 'team_t3_role', 'l' => 'Team 3: role', 'd' => 'Senior Carer' ),
+						array( 'k' => 'team_t3_bio', 'l' => 'Team 3: bio', 'ta' => 1, 'd' => 'With a warm and caring personality, Susan&rsquo;s heart is invested in our residents and the work she loves.' ),
+						array( 'k' => 'team_t4_name', 'l' => 'Team 4: name', 'd' => 'Tina' ),
+						array( 'k' => 'team_t4_role', 'l' => 'Team 4: role', 'd' => 'Activities Co-ordinator' ),
+						array( 'k' => 'team_t4_bio', 'l' => 'Team 4: bio', 'ta' => 1, 'd' => 'Tina makes sure our residents are as involved as they wish to be in all the daily games, quizzes and chat sessions.' ),
+
+						// FAQ (faq_) — intro only; questions edited in template
+						array( 'k' => 'faq_h1', 'l' => 'FAQ: heading', 'd' => 'Frequently asked questions' ),
+						array( 'k' => 'faq_intro', 'l' => 'FAQ: intro', 'ta' => 1, 'd' => 'Choosing a care home raises a lot of questions. Here are some of the ones families ask us most.' ),
+
+						// Contact (contact_)
+						array( 'k' => 'contact_h1', 'l' => 'Contact: heading', 'd' => 'We&rsquo;re here to help' ),
+						array( 'k' => 'contact_intro', 'l' => 'Contact: intro', 'ta' => 1, 'd' => 'Whether you have a question or would like to arrange a visit, we&rsquo;d love to hear from you.' ),
+					),
+				),
 			),
-			'slug_groups' => array( 'home' => 'home' ),
+			'slug_groups'   => array( 'home' => 'home' ),
+			'slug_prefixes' => array(
+				'about'    => 'about_',
+				'our-care' => 'care_',
+				'our-team' => 'team_',
+				'faq'      => 'faq_',
+				'contact'  => 'contact_',
+			),
 		),
 
 		/* ---- IMAGES ------------------------------------------------------- */
@@ -141,8 +203,42 @@ add_filter( 'sensa_cms_config', function () {
 						array( 'k' => 'home_m3_img', 'l' => 'Team 3 photo', 'd' => $u . 'MUM.jpg' ),
 					),
 				),
+				'about' => array(
+					'label'  => 'About page',
+					'fields' => array(
+						array( 'k' => 'about_img', 'l' => 'About: main image', 'd' => $u . 'the-flixton-manor-team.jpg' ),
+					),
+				),
+				'care' => array(
+					'label'  => 'Our Care page',
+					'fields' => array(
+						array( 'k' => 'care_nursing_img',     'l' => 'Care: Nursing image', 'd' => $u . 'NURSING-CARE-1200.jpg' ),
+						array( 'k' => 'care_residential_img', 'l' => 'Care: Residential image', 'd' => $u . 'light-lounge-1.jpg' ),
+						array( 'k' => 'care_dementia_img',    'l' => 'Care: Dementia image', 'd' => $u . 'LAUGHING-MUM.jpg' ),
+						array( 'k' => 'care_beds_img',  'l' => 'Care: Bedrooms image', 'd' => $u . 'WINDOW-BED.jpg' ),
+						array( 'k' => 'care_pers_img',  'l' => 'Care: Personalised image', 'd' => $u . 'WINDOW-SILL.jpg' ),
+						array( 'k' => 'care_day_img',   'l' => 'Care: Day rooms image', 'd' => $u . 'lounge-8.jpg' ),
+						array( 'k' => 'care_meals_img', 'l' => 'Care: Meals image', 'd' => $u . 'cottage-pie-1200.jpg' ),
+						array( 'k' => 'care_act_img',   'l' => 'Care: Activities image', 'd' => $u . 'HAPPY-GROUP.jpg' ),
+						array( 'k' => 'care_facil_img', 'l' => 'Care: Facilities image', 'd' => $u . 'AIDCALL-1200.jpg' ),
+					),
+				),
+				'team' => array(
+					'label'  => 'Our Team page',
+					'fields' => array(
+						array( 'k' => 'team_t1_img', 'l' => 'Team 1 photo', 'd' => $u . 'ASHLEIGH.jpg' ),
+						array( 'k' => 'team_t2_img', 'l' => 'Team 2 photo', 'd' => $u . 'LEKHA-MARLENE.jpg' ),
+						array( 'k' => 'team_t3_img', 'l' => 'Team 3 photo', 'd' => $u . 'MUM.jpg' ),
+						array( 'k' => 'team_t4_img', 'l' => 'Team 4 photo', 'd' => $u . 'HAPPY-GROUP.jpg' ),
+					),
+				),
 			),
-			'slug_groups' => array( 'home' => 'home' ),
+			'slug_groups' => array(
+				'home'     => 'home',
+				'about'    => 'about',
+				'our-care' => 'care',
+				'our-team' => 'team',
+			),
 		),
 
 		/* ---- GALLERIES ---------------------------------------------------- */

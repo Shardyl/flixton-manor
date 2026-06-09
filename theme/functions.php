@@ -32,6 +32,7 @@ add_action( 'after_setup_theme', function () {
 require get_stylesheet_directory() . '/inc/enqueue.php';
 require get_stylesheet_directory() . '/inc/cms-config.php';
 require get_stylesheet_directory() . '/inc/helpers.php';
+require get_stylesheet_directory() . '/inc/contact-form.php';
 
 /* ---------------------------------------------------------------------------
  * Graceful fallbacks if the Sensa CMS plugin is not active yet.

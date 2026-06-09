@@ -218,3 +218,31 @@ footer a:hover{color:#fff}
 .pagination .page-numbers{display:inline-flex;align-items:center;justify-content:center;min-width:42px;height:42px;padding:0 12px;margin:0 4px;border-radius:10px;background:#fff;border:1px solid var(--line);color:var(--teal-900);font-weight:700;text-decoration:none}
 .pagination .page-numbers.current{background:var(--teal-700);color:#fff;border-color:var(--teal-700)}
 .pagination .page-numbers:hover{background:var(--teal-100)}
+
+/* ---------- Our Care: detail rows ---------- */
+.care-row{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-bottom:64px}
+.care-row:last-child{margin-bottom:0}
+.care-row__media img{width:100%;height:380px;object-fit:cover;border-radius:20px;box-shadow:var(--shadow)}
+.care-row__body h2{margin-bottom:14px}
+.care-row__body p{color:var(--muted);font-size:1.05rem;margin:0}
+.care-row--rev .care-row__media{order:2}
+@media(max-width:860px){.care-row,.care-row--rev .care-row__media{grid-template-columns:1fr;order:0}.care-row__media img{height:280px}}
+
+/* ---------- FAQ accordion ---------- */
+.faq-list{max-width:820px;margin:0 auto;display:grid;gap:14px}
+.faq-item{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow-sm);overflow:hidden}
+.faq-item summary{cursor:pointer;list-style:none;padding:20px 24px;font-family:'Fraunces',serif;font-size:1.18rem;color:var(--teal-900);font-weight:500;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";font-size:1.6rem;color:var(--amber-dark);flex:none;line-height:1;transition:.2s}
+.faq-item[open] summary::after{content:"\2013"}
+.faq-item .faq-a{padding:0 24px 22px}
+.faq-item .faq-a p{margin:0;color:var(--muted)}
+
+/* ---------- contact extras ---------- */
+.form-status{display:none;padding:13px 16px;border-radius:10px;margin-bottom:16px;font-weight:600;font-size:.95rem}
+.form-status.ok{display:block;background:#e3f3ea;color:#1d6b44;border:1px solid #bfe3cf}
+.form-status.err{display:block;background:#fbe7e4;color:#a13a2a;border:1px solid #f1c9c1}
+.contact-map iframe{display:block}
+/* Beat Chrome autofill dark text on name/email/phone inputs (skill gotcha) */
+.form input,.form textarea{-webkit-text-fill-color:var(--ink)}
+.form input:-webkit-autofill,.form input:-webkit-autofill:focus{-webkit-text-fill-color:var(--ink);transition:background-color 9999s ease-in-out 0s}
